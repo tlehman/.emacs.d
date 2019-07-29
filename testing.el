@@ -1,13 +1,15 @@
 					; testing.el
 					; (author "github:tlehman")
 
+(require 'subr-x) ; contains string-trim function
+
 (defun rspec? (file)
   (string-match "_spec.rb" file))
 
 (defun rspec-run (file)
-  (let* ((root (shell-command-to-string "git rev-parse --show-toplevel"))
-	 (rails-root (concat (string-trim root) "/web"))
-	 (testfile (first (last (split-string file (concat rails-root "/")))))
+  (let* ((root (string-trim (shell-command-to-string "git rev-parse --show-toplevel")))
+	 (rails-root (concat root "/web"))
+	 (testfile (car (cdr (split-string file (concat rails-root "/")))))
 	 (cmd (concat "(cd " rails-root " && bundle exec rspec " testfile ")")))
     (compile cmd)))
 

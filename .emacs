@@ -7,18 +7,19 @@
 (load-theme 'darkokai t)
 (ns-toggle-toolbar)
 (global-hl-line-mode)
-
+(when window-system (set-frame-size (selected-frame) 100 50))
 
 (global-set-key (kbd "C-;") 'execute-extended-command)
 (global-set-key (kbd "C-o") 'next-multiframe-window)
 (global-set-key (kbd "C-S-o") 'previous-multiframe-window)
 
 
-(load "~/.emacs.d/testing.el")
-(load "~/.emacs.d/org-hacks.el")
-
-
 (require 'package)
 (add-to-list 'package-archives
              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+
+(load "~/.emacs.d/testing.el")
+(load "~/.emacs.d/org-hacks.el")
+(load "~/.emacs.d/ssh-hacks.el")
+
 
