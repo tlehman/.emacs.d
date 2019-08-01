@@ -31,5 +31,5 @@
 					; fast recursive search (works remote through tramp, needs remote rg installation)
 (require 'ripgrep)
 (global-set-key (kbd "s-/") 'ripgrep-regexp)
-(setq ripgrep-executable "/usr/local/bin/rg")
+(setq ripgrep-executable "/usr/bin/rg")
 
