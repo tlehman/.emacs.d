@@ -3,8 +3,10 @@
 (set-default-font "Inconsolata 22")
 (set-background-color "black")
 (set-background-color "white")
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(load-theme 'monokai t)
+(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+
+
+
 (ns-toggle-toolbar)
 (global-hl-line-mode)
 (when window-system (set-frame-size (selected-frame) 100 50))
@@ -21,9 +23,10 @@
 
 (add-to-list 'package-archives
              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(add-to-list 'auto-mode-alist '("\\.rbi\\'" . ruby-mode))
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
-
-
+(load-theme 'monokai t)
 (load "~/.emacs.d/testing.el")
 (load "~/.emacs.d/org-hacks.el")
 (load "~/.emacs.d/ssh-hacks.el")
