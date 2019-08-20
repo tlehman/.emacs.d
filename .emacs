@@ -28,6 +28,7 @@
 
 (load-theme 'monokai t)
 (load "~/.emacs.d/testing.el")
+(load "~/.emacs.d/time.el")
 (load "~/.emacs.d/org-hacks.el")
 (load "~/.emacs.d/ssh-hacks.el")
 
