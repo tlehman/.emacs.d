@@ -5,6 +5,9 @@
 (set-background-color "white")
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
 
+; No Tabs
+(setq indent-tabs-mode nil)
+(infer-indentation-style)
 
 
 (ns-toggle-toolbar)
