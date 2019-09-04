@@ -34,6 +34,7 @@
 (load "~/.emacs.d/time.el")
 (load "~/.emacs.d/org-hacks.el")
 (load "~/.emacs.d/ssh-hacks.el")
+(load "~/.emacs.d/markdown-mode-20190802.2215.el")
 
 					; fast recursive search (works remote through tramp, needs remote rg installation)
 (require 'ripgrep)
